@@ -72,12 +72,15 @@ public class VentanaJuego extends javax.swing.JFrame {
         totalFallos = new javax.swing.JTextField();
         BotonSiguientePalabra = new javax.swing.JButton();
         botonSalir = new java.awt.Button();
+        jLabel6 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         textMostrar.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         textMostrar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -87,6 +90,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 textMostrarActionPerformed(evt);
             }
         });
+        jPanel1.add(textMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 83, 255, -1));
 
         BotonMostrarPalabra.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         BotonMostrarPalabra.setText("MOSTRAR PALABRA");
@@ -95,6 +99,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 BotonMostrarPalabraActionPerformed(evt);
             }
         });
+        jPanel1.add(BotonMostrarPalabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 179, 257, -1));
 
         BotonA.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         BotonA.setText("a");
@@ -103,6 +108,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 BotonAActionPerformed(evt);
             }
         });
+        jPanel1.add(BotonA, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 246, 92, 66));
 
         BotonE.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         BotonE.setText("e");
@@ -111,6 +117,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 BotonEActionPerformed(evt);
             }
         });
+        jPanel1.add(BotonE, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 246, 92, 66));
 
         BotonI.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         BotonI.setText("i");
@@ -119,6 +126,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 BotonIActionPerformed(evt);
             }
         });
+        jPanel1.add(BotonI, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 246, 92, 66));
 
         BotonO.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         BotonO.setText("o");
@@ -127,6 +135,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 BotonOActionPerformed(evt);
             }
         });
+        jPanel1.add(BotonO, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 246, 92, 66));
 
         BotonU.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         BotonU.setText("u");
@@ -135,6 +144,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 BotonUActionPerformed(evt);
             }
         });
+        jPanel1.add(BotonU, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 246, 92, 66));
 
         totalPalabras.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         totalPalabras.addActionListener(new java.awt.event.ActionListener() {
@@ -142,12 +152,15 @@ public class VentanaJuego extends javax.swing.JFrame {
                 totalPalabrasActionPerformed(evt);
             }
         });
+        jPanel1.add(totalPalabras, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 359, 42, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel3.setText("Total Palabras ");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 366, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel4.setText("Intentos");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 366, -1, -1));
 
         totalIntentos.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         totalIntentos.addActionListener(new java.awt.event.ActionListener() {
@@ -155,9 +168,11 @@ public class VentanaJuego extends javax.swing.JFrame {
                 totalIntentosActionPerformed(evt);
             }
         });
+        jPanel1.add(totalIntentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(289, 359, 42, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel5.setText("Fallos");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 366, -1, -1));
 
         totalFallos.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         totalFallos.addActionListener(new java.awt.event.ActionListener() {
@@ -165,6 +180,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 totalFallosActionPerformed(evt);
             }
         });
+        jPanel1.add(totalFallos, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 359, 42, -1));
 
         BotonSiguientePalabra.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         BotonSiguientePalabra.setText("SIGUIENTE PALABRA");
@@ -173,6 +189,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 BotonSiguientePalabraActionPerformed(evt);
             }
         });
+        jPanel1.add(BotonSiguientePalabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 425, 309, -1));
 
         botonSalir.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         botonSalir.setLabel("Salir");
@@ -182,80 +199,8 @@ public class VentanaJuego extends javax.swing.JFrame {
                 botonSalirActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(BotonMostrarPalabra, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(147, 147, 147))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(BotonA, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(BotonE, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(BotonI, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(BotonO, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(BotonU, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 17, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BotonSiguientePalabra, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(totalPalabras, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(totalIntentos, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(totalFallos, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(textMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(BotonMostrarPalabra)
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonA, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonE, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonI, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonO, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonU, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(totalPalabras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(totalIntentos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(totalFallos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addComponent(BotonSiguientePalabra)
-                .addGap(19, 19, 19))
-        );
+        jPanel1.add(botonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 0, -1, 35));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, 130));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -267,7 +212,7 @@ public class VentanaJuego extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(0, 30, Short.MAX_VALUE))
         );
 
         pack();
@@ -320,7 +265,6 @@ public class VentanaJuego extends javax.swing.JFrame {
             categoria.setArregloFrutas();
             contador++;
         }
-        
         
         palabraOculta = categoria.getArreglo(i);
         this.palabraOculta = categoria.getArreglo(i);
@@ -491,6 +435,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField textMostrar;
     private javax.swing.JTextField totalFallos;
