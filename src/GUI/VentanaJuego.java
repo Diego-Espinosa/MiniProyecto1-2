@@ -16,8 +16,8 @@ public class VentanaJuego extends javax.swing.JFrame {
 
     char vocal;
     String palabraOculta;
-    public static int total_Palabras = 0;
-    int cantidadIntentos = 0;
+    public static int total_Palabras = 1;
+    public static int cantidadIntentos = 0;
     public static int cantidadFallos = 0;
     public static int cantidadAciertos = 0;
     int contador = 1;
@@ -25,6 +25,10 @@ public class VentanaJuego extends javax.swing.JFrame {
 
     public VentanaJuego() {
         initComponents();
+    }
+    
+    public static int get_cantidadIntentos() {
+        return cantidadIntentos;
     }
     
     public static int get_total_Palabras() {
@@ -294,7 +298,8 @@ public class VentanaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_textMostrarActionPerformed
 
     private void BotonMostrarPalabraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMostrarPalabraActionPerformed
-
+        String StringTotalPalabras = Integer.toString(total_Palabras);
+        totalPalabras.setText(StringTotalPalabras);
         String palabraOculta;
         String palabraMostrar;
         char vocal;
@@ -333,22 +338,36 @@ public class VentanaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonMostrarPalabraActionPerformed
 
     private void BotonAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAActionPerformed
+        cantidadIntentos++;
         if ('a' == vocal) {
             textMostrar.setText(palabraOculta);
-            total_Palabras++;
-            cantidadAciertos++;
             
-            String StringTotalPalabras = Integer.toString(total_Palabras);
+            cantidadAciertos++;
+           
+            /*String StringTotalPalabras = Integer.toString(total_Palabras);
             totalPalabras.setText(StringTotalPalabras);
-
-        } else {
-            cantidadIntentos++;
-            cantidadFallos++;
             String StringTotalIntentos = Integer.toString(cantidadIntentos);
             totalIntentos.setText(StringTotalIntentos);
             String StringTotalFallos = Integer.toString(cantidadFallos);
-            totalFallos.setText(StringTotalFallos);
+            totalFallos.setText(StringTotalFallos);*/
+
+        } else {
+            
+            cantidadFallos++;
+            /*String StringTotalPalabras = Integer.toString(total_Palabras);
+            totalPalabras.setText(StringTotalPalabras);
+            String StringTotalIntentos = Integer.toString(cantidadIntentos);
+            totalIntentos.setText(StringTotalIntentos);
+            String StringTotalFallos = Integer.toString(cantidadFallos);
+            totalFallos.setText(StringTotalFallos);*/
         }
+        String StringTotalPalabras = Integer.toString(total_Palabras);
+        totalPalabras.setText(StringTotalPalabras);
+        String StringTotalIntentos = Integer.toString(cantidadIntentos);
+        totalIntentos.setText(StringTotalIntentos);
+        String StringTotalFallos = Integer.toString(cantidadFallos);
+        totalFallos.setText(StringTotalFallos);
+        
     }//GEN-LAST:event_BotonAActionPerformed
 
     private void totalPalabrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalPalabrasActionPerformed
@@ -364,79 +383,79 @@ public class VentanaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_totalFallosActionPerformed
 
     private void BotonEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEActionPerformed
+        cantidadIntentos++;
         if ('e' == vocal) {
             textMostrar.setText(palabraOculta);
-            total_Palabras++;
             cantidadAciertos++;
-            String StringTotalPalabras = Integer.toString(total_Palabras);
-            totalPalabras.setText(StringTotalPalabras);
 
         } else {
-            cantidadIntentos++;
             cantidadFallos++;
-            String StringTotalIntentos = Integer.toString(cantidadIntentos);
-            totalIntentos.setText(StringTotalIntentos);
-            String StringTotalFallos = Integer.toString(cantidadFallos);
-            totalFallos.setText(StringTotalFallos);
         }
+        String StringTotalPalabras = Integer.toString(total_Palabras);
+        totalPalabras.setText(StringTotalPalabras);
+        String StringTotalIntentos = Integer.toString(cantidadIntentos);
+        totalIntentos.setText(StringTotalIntentos);
+        String StringTotalFallos = Integer.toString(cantidadFallos);
+        totalFallos.setText(StringTotalFallos);
+        
     }//GEN-LAST:event_BotonEActionPerformed
 
     private void BotonIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIActionPerformed
+        cantidadIntentos++;
         if ('i' == vocal) {
             textMostrar.setText(palabraOculta);
-            total_Palabras++;
             cantidadAciertos++;
-            String StringTotalPalabras = Integer.toString(total_Palabras);
-            totalPalabras.setText(StringTotalPalabras);
+            
 
         } else {
-            cantidadIntentos++;
             cantidadFallos++;
-            String StringTotalIntentos = Integer.toString(cantidadIntentos);
-            totalIntentos.setText(StringTotalIntentos);
-            String StringTotalFallos = Integer.toString(cantidadFallos);
-            totalFallos.setText(StringTotalFallos);
         }
+        String StringTotalPalabras = Integer.toString(total_Palabras);
+        totalPalabras.setText(StringTotalPalabras);
+        String StringTotalIntentos = Integer.toString(cantidadIntentos);
+        totalIntentos.setText(StringTotalIntentos);
+        String StringTotalFallos = Integer.toString(cantidadFallos);
+        totalFallos.setText(StringTotalFallos);
+        
     }//GEN-LAST:event_BotonIActionPerformed
 
     private void BotonOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonOActionPerformed
+        cantidadIntentos++;
         if ('o' == vocal) {
             textMostrar.setText(palabraOculta);
-            total_Palabras++;
             cantidadAciertos++;
-            String StringTotalPalabras = Integer.toString(total_Palabras);
-            totalPalabras.setText(StringTotalPalabras);
-
         } else {
-            cantidadIntentos++;
             cantidadFallos++;
-            String StringTotalIntentos = Integer.toString(cantidadIntentos);
-            totalIntentos.setText(StringTotalIntentos);
-            String StringTotalFallos = Integer.toString(cantidadFallos);
-            totalFallos.setText(StringTotalFallos);
         }
+        String StringTotalPalabras = Integer.toString(total_Palabras);
+        totalPalabras.setText(StringTotalPalabras);
+        String StringTotalIntentos = Integer.toString(cantidadIntentos);
+        totalIntentos.setText(StringTotalIntentos);
+        String StringTotalFallos = Integer.toString(cantidadFallos);
+        totalFallos.setText(StringTotalFallos);
+        
     }//GEN-LAST:event_BotonOActionPerformed
 
     private void BotonUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonUActionPerformed
+        cantidadIntentos++;
         if ('u' == vocal) {
             textMostrar.setText(palabraOculta);
-            total_Palabras++;
             cantidadAciertos++;
-            String StringTotalPalabras = Integer.toString(total_Palabras);
-            totalPalabras.setText(StringTotalPalabras);
 
         } else {
-            cantidadIntentos++;
             cantidadFallos++;
-            String StringTotalIntentos = Integer.toString(cantidadIntentos);
-            totalIntentos.setText(StringTotalIntentos);
-            String StringTotalFallos = Integer.toString(cantidadFallos);
-            totalFallos.setText(StringTotalFallos);
         }
+        String StringTotalPalabras = Integer.toString(total_Palabras);
+        totalPalabras.setText(StringTotalPalabras);
+        String StringTotalIntentos = Integer.toString(cantidadIntentos);
+        totalIntentos.setText(StringTotalIntentos);
+        String StringTotalFallos = Integer.toString(cantidadFallos);
+        totalFallos.setText(StringTotalFallos);
+        
     }//GEN-LAST:event_BotonUActionPerformed
 
     private void BotonSiguientePalabraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSiguientePalabraActionPerformed
-        
+        total_Palabras++;
         if (this.i == 9){ // Condicional para que no se salga del limite de 10 elementos
             this.i = 0;
         } else{
