@@ -16,16 +16,31 @@ public class VentanaJuego extends javax.swing.JFrame {
 
     char vocal;
     String palabraOculta;
-    int total_Palabras = 0;
+    public static int total_Palabras = 0;
     int cantidadIntentos = 0;
-    int cantidadFallos = 0;
+    public static int cantidadFallos = 0;
+    public static int cantidadAciertos = 0;
     int contador = 1;
     public int i = 0; // CONTADOR DEL CICLO
 
     public VentanaJuego() {
         initComponents();
     }
-
+    
+    public static int get_total_Palabras() {
+        return total_Palabras;
+    }
+    
+    public static int get_cantidadFallos() {
+        return cantidadFallos;
+    }
+    
+    public static int get_cantidadAciertos() {
+        return cantidadAciertos;
+    }
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,7 +54,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         textMostrar = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        BotonMostrarPalabra = new javax.swing.JButton();
         BotonA = new javax.swing.JButton();
         BotonE = new javax.swing.JButton();
         BotonI = new javax.swing.JButton();
@@ -48,11 +63,11 @@ public class VentanaJuego extends javax.swing.JFrame {
         totalPalabras = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        totalPalabras1 = new javax.swing.JTextField();
+        totalIntentos = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        totalPalabras2 = new javax.swing.JTextField();
+        totalFallos = new javax.swing.JTextField();
         BotonSiguientePalabra = new javax.swing.JButton();
-        btnSalir = new java.awt.Button();
+        botonSalir = new java.awt.Button();
 
         jLabel1.setText("jLabel1");
 
@@ -69,11 +84,11 @@ public class VentanaJuego extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton1.setText("MOSTRAR PALABRA");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BotonMostrarPalabra.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        BotonMostrarPalabra.setText("MOSTRAR PALABRA");
+        BotonMostrarPalabra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BotonMostrarPalabraActionPerformed(evt);
             }
         });
 
@@ -130,20 +145,20 @@ public class VentanaJuego extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel4.setText("Intentos");
 
-        totalPalabras1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        totalPalabras1.addActionListener(new java.awt.event.ActionListener() {
+        totalIntentos.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        totalIntentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                totalPalabras1ActionPerformed(evt);
+                totalIntentosActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel5.setText("Fallos");
 
-        totalPalabras2.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        totalPalabras2.addActionListener(new java.awt.event.ActionListener() {
+        totalFallos.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        totalFallos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                totalPalabras2ActionPerformed(evt);
+                totalFallosActionPerformed(evt);
             }
         });
 
@@ -155,11 +170,12 @@ public class VentanaJuego extends javax.swing.JFrame {
             }
         });
 
-        btnSalir.setLabel("Salir");
-        btnSalir.setName("Salir"); // NOI18N
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+        botonSalir.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        botonSalir.setLabel("Salir");
+        botonSalir.setName("Salir"); // NOI18N
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
+                botonSalirActionPerformed(evt);
             }
         });
 
@@ -172,7 +188,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonMostrarPalabra, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(147, 147, 147))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -198,25 +214,25 @@ public class VentanaJuego extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(totalPalabras1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(totalIntentos, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(totalPalabras2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(totalFallos, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addComponent(textMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addComponent(jButton1)
+                .addComponent(BotonMostrarPalabra)
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonA, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -229,9 +245,9 @@ public class VentanaJuego extends javax.swing.JFrame {
                     .addComponent(totalPalabras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4)
-                    .addComponent(totalPalabras1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(totalIntentos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
-                    .addComponent(totalPalabras2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(totalFallos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addComponent(BotonSiguientePalabra)
                 .addGap(19, 19, 19))
@@ -261,9 +277,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         Categoria categoria = new Categoria();
         categoria.setArregloAnimales();
 
-        for (int i = 0; i < 10; i++) {
-
-        }
+        
         palabraOculta = categoria.getArreglo(i);
         this.palabraOculta = categoria.getArreglo(i);
         vocal = categoria.getVocal(palabraOculta);
@@ -279,18 +293,30 @@ public class VentanaJuego extends javax.swing.JFrame {
 
     }//GEN-LAST:event_textMostrarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BotonMostrarPalabraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMostrarPalabraActionPerformed
 
         String palabraOculta;
         String palabraMostrar;
         char vocal;
-
+        int aux = 0;
+        int contador = 0;
+        //Jugador jugador = new Jugador();
+        aux = Jugador.get_categoriaSeleccionada();
+        System.out.println("NUMERO = "+ aux);
+        
         Categoria categoria = new Categoria();
-        categoria.setArregloAnimales();
-
-        for (int i = 0; i < 10; i++) {
-
+        if( aux == 1 & contador == 0 ){
+            categoria.setArregloAnimales();
+            contador++;
+        } else if( aux == 2 & contador == 0 ){
+            categoria.setArregloColores();
+            contador++;
+        } else if ( aux == 3 & contador == 0 ){
+            categoria.setArregloFrutas();
+            contador++;
         }
+        
+        
         palabraOculta = categoria.getArreglo(i);
         this.palabraOculta = categoria.getArreglo(i);
         vocal = categoria.getVocal(palabraOculta);
@@ -301,45 +327,57 @@ public class VentanaJuego extends javax.swing.JFrame {
 
         System.out.println("PRIMER ANIMAL : " + palabraOculta);
         System.out.println("PALABRA A MOSTRAR : " + palabraMostrar);
-        System.out.println("VOCAL = " + vocal);
+        System.out.println("VOCAL = " + vocal); 
 
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BotonMostrarPalabraActionPerformed
 
     private void BotonAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAActionPerformed
         if ('a' == vocal) {
             textMostrar.setText(palabraOculta);
             total_Palabras++;
-            cantidadIntentos++;
+            cantidadAciertos++;
+            
+            String StringTotalPalabras = Integer.toString(total_Palabras);
+            totalPalabras.setText(StringTotalPalabras);
 
         } else {
             cantidadIntentos++;
             cantidadFallos++;
+            String StringTotalIntentos = Integer.toString(cantidadIntentos);
+            totalIntentos.setText(StringTotalIntentos);
+            String StringTotalFallos = Integer.toString(cantidadFallos);
+            totalFallos.setText(StringTotalFallos);
         }
     }//GEN-LAST:event_BotonAActionPerformed
 
     private void totalPalabrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalPalabrasActionPerformed
-        String StringTotalPalabras = Integer.toString(total_Palabras);
-        totalPalabras.setText(StringTotalPalabras);
+        
     }//GEN-LAST:event_totalPalabrasActionPerformed
 
-    private void totalPalabras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalPalabras1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_totalPalabras1ActionPerformed
+    private void totalIntentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalIntentosActionPerformed
+        
+    }//GEN-LAST:event_totalIntentosActionPerformed
 
-    private void totalPalabras2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalPalabras2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_totalPalabras2ActionPerformed
+    private void totalFallosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalFallosActionPerformed
+        
+    }//GEN-LAST:event_totalFallosActionPerformed
 
     private void BotonEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEActionPerformed
         if ('e' == vocal) {
             textMostrar.setText(palabraOculta);
             total_Palabras++;
-            cantidadIntentos++;
+            cantidadAciertos++;
+            String StringTotalPalabras = Integer.toString(total_Palabras);
+            totalPalabras.setText(StringTotalPalabras);
 
         } else {
             cantidadIntentos++;
             cantidadFallos++;
+            String StringTotalIntentos = Integer.toString(cantidadIntentos);
+            totalIntentos.setText(StringTotalIntentos);
+            String StringTotalFallos = Integer.toString(cantidadFallos);
+            totalFallos.setText(StringTotalFallos);
         }
     }//GEN-LAST:event_BotonEActionPerformed
 
@@ -347,11 +385,17 @@ public class VentanaJuego extends javax.swing.JFrame {
         if ('i' == vocal) {
             textMostrar.setText(palabraOculta);
             total_Palabras++;
-            cantidadIntentos++;
+            cantidadAciertos++;
+            String StringTotalPalabras = Integer.toString(total_Palabras);
+            totalPalabras.setText(StringTotalPalabras);
 
         } else {
             cantidadIntentos++;
             cantidadFallos++;
+            String StringTotalIntentos = Integer.toString(cantidadIntentos);
+            totalIntentos.setText(StringTotalIntentos);
+            String StringTotalFallos = Integer.toString(cantidadFallos);
+            totalFallos.setText(StringTotalFallos);
         }
     }//GEN-LAST:event_BotonIActionPerformed
 
@@ -359,11 +403,17 @@ public class VentanaJuego extends javax.swing.JFrame {
         if ('o' == vocal) {
             textMostrar.setText(palabraOculta);
             total_Palabras++;
-            cantidadIntentos++;
+            cantidadAciertos++;
+            String StringTotalPalabras = Integer.toString(total_Palabras);
+            totalPalabras.setText(StringTotalPalabras);
 
         } else {
             cantidadIntentos++;
             cantidadFallos++;
+            String StringTotalIntentos = Integer.toString(cantidadIntentos);
+            totalIntentos.setText(StringTotalIntentos);
+            String StringTotalFallos = Integer.toString(cantidadFallos);
+            totalFallos.setText(StringTotalFallos);
         }
     }//GEN-LAST:event_BotonOActionPerformed
 
@@ -371,29 +421,38 @@ public class VentanaJuego extends javax.swing.JFrame {
         if ('u' == vocal) {
             textMostrar.setText(palabraOculta);
             total_Palabras++;
-            cantidadIntentos++;
+            cantidadAciertos++;
+            String StringTotalPalabras = Integer.toString(total_Palabras);
+            totalPalabras.setText(StringTotalPalabras);
 
         } else {
             cantidadIntentos++;
             cantidadFallos++;
+            String StringTotalIntentos = Integer.toString(cantidadIntentos);
+            totalIntentos.setText(StringTotalIntentos);
+            String StringTotalFallos = Integer.toString(cantidadFallos);
+            totalFallos.setText(StringTotalFallos);
         }
     }//GEN-LAST:event_BotonUActionPerformed
 
     private void BotonSiguientePalabraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSiguientePalabraActionPerformed
-        total_Palabras++;
-        i++;
-        contador++;
+        
+        if (this.i == 9){ // Condicional para que no se salga del limite de 10 elementos
+            this.i = 0;
+        } else{
+            i++;
+        }
 
     }//GEN-LAST:event_BotonSiguientePalabraActionPerformed
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
         VentanaEstadisticas ventanaEstadisticas = new VentanaEstadisticas();
         ventanaEstadisticas.setVisible(true);
         ventanaEstadisticas.setLocationRelativeTo(null);
         this.setVisible(false);
 
 
-    }//GEN-LAST:event_btnSalirActionPerformed
+    }//GEN-LAST:event_botonSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -403,11 +462,11 @@ public class VentanaJuego extends javax.swing.JFrame {
     private javax.swing.JButton BotonA;
     private javax.swing.JButton BotonE;
     private javax.swing.JButton BotonI;
+    private javax.swing.JButton BotonMostrarPalabra;
     private javax.swing.JButton BotonO;
     private javax.swing.JButton BotonSiguientePalabra;
     private javax.swing.JButton BotonU;
-    private java.awt.Button btnSalir;
-    private javax.swing.JButton jButton1;
+    private java.awt.Button botonSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -415,8 +474,8 @@ public class VentanaJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField textMostrar;
+    private javax.swing.JTextField totalFallos;
+    private javax.swing.JTextField totalIntentos;
     private javax.swing.JTextField totalPalabras;
-    private javax.swing.JTextField totalPalabras1;
-    private javax.swing.JTextField totalPalabras2;
     // End of variables declaration//GEN-END:variables
 }

@@ -12,9 +12,8 @@ import Jugador.Jugador;
  */
 public class VentanaCategoria extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VentanaCategoria
-     */
+    //int categoriaSeleccionada = 0;
+    
     public VentanaCategoria() {
         initComponents();
     }
@@ -141,6 +140,8 @@ public class VentanaCategoria extends javax.swing.JFrame {
         String nombreDigitado = textoNombre.getText();
         jugador.setNombre(nombreDigitado);
         
+        jugador.categoriaSeleccionada = 1;
+        //System.out.println(" NUMERO = " + jugador.get_categoriaSeleccionada());
         VentanaJuego Ventanajuego = new VentanaJuego();
         Ventanajuego.setVisible(true);
         Ventanajuego.setLocationRelativeTo(null);
@@ -152,12 +153,24 @@ public class VentanaCategoria extends javax.swing.JFrame {
         Jugador jugador = new Jugador();
         String nombreDigitado = textoNombre.getText();
         jugador.setNombre(nombreDigitado);
+        jugador.categoriaSeleccionada = 2;
+        VentanaJuego Ventanajuego = new VentanaJuego();
+        Ventanajuego.setVisible(true);
+        Ventanajuego.setLocationRelativeTo(null);
+        this.setVisible(false);
+        
     }//GEN-LAST:event_botonColorActionPerformed
 
     private void botonFrutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFrutasActionPerformed
         Jugador jugador = new Jugador();
         String nombreDigitado = textoNombre.getText();
         jugador.setNombre(nombreDigitado);
+        jugador.categoriaSeleccionada = 3;
+        
+        VentanaJuego Ventanajuego = new VentanaJuego();
+        Ventanajuego.setVisible(true);
+        Ventanajuego.setLocationRelativeTo(null);
+        this.setVisible(false);
     }//GEN-LAST:event_botonFrutasActionPerformed
 
     private void textoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoNombreActionPerformed

@@ -58,7 +58,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jButton1" min="-2" pref="257" max="-2" attributes="0"/>
+                              <Component id="BotonMostrarPalabra" min="-2" pref="257" max="-2" attributes="0"/>
                               <Component id="textMostrar" min="-2" pref="255" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
@@ -89,18 +89,18 @@
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="totalPalabras1" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="totalIntentos" min="-2" pref="42" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="totalPalabras2" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="totalFallos" min="-2" pref="42" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btnSalir" min="-2" max="-2" attributes="0"/>
+                  <Component id="botonSalir" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -108,11 +108,11 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="btnSalir" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="botonSalir" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                   <Component id="textMostrar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="BotonMostrarPalabra" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="BotonA" alignment="3" min="-2" pref="66" max="-2" attributes="0"/>
@@ -126,9 +126,9 @@
                       <Component id="totalPalabras" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="totalPalabras1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="totalIntentos" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="totalPalabras2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="totalFallos" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Component id="BotonSiguientePalabra" min="-2" max="-2" attributes="0"/>
@@ -150,7 +150,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textMostrarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="BotonMostrarPalabra">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial Black" size="18" style="0"/>
@@ -158,7 +158,7 @@
             <Property name="text" type="java.lang.String" value="MOSTRAR PALABRA"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonMostrarPalabraActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonA">
@@ -242,14 +242,14 @@
             <Property name="text" type="java.lang.String" value="Intentos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="totalPalabras1">
+        <Component class="javax.swing.JTextField" name="totalIntentos">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial Black" size="18" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="totalPalabras1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="totalIntentosActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
@@ -260,14 +260,14 @@
             <Property name="text" type="java.lang.String" value="Fallos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="totalPalabras2">
+        <Component class="javax.swing.JTextField" name="totalFallos">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial Black" size="18" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="totalPalabras2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="totalFallosActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonSiguientePalabra">
@@ -281,13 +281,16 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonSiguientePalabraActionPerformed"/>
           </Events>
         </Component>
-        <Component class="java.awt.Button" name="btnSalir">
+        <Component class="java.awt.Button" name="botonSalir">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Black" size="12" style="0"/>
+            </Property>
             <Property name="label" type="java.lang.String" value="Salir"/>
             <Property name="name" type="java.lang.String" value="Salir" noResource="true"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalirActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonSalirActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
