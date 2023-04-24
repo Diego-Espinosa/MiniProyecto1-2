@@ -7,6 +7,11 @@ package GUI;
 
 import Categoria.Categoria;
 import Jugador.Jugador;
+import java.awt.Image;
+import java.util.HashSet;
+import java.util.Set;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -26,25 +31,23 @@ public class VentanaJuego extends javax.swing.JFrame {
     public VentanaJuego() {
         initComponents();
     }
-    
+
     public static int get_cantidadIntentos() {
         return cantidadIntentos;
     }
-    
+
     public static int get_total_Palabras() {
         return total_Palabras;
     }
-    
+
     public static int get_cantidadFallos() {
         return cantidadFallos;
     }
-    
+
     public static int get_cantidadAciertos() {
         return cantidadAciertos;
     }
-    
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -73,6 +76,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         BotonSiguientePalabra = new javax.swing.JButton();
         botonSalir = new java.awt.Button();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -200,7 +204,10 @@ public class VentanaJuego extends javax.swing.JFrame {
             }
         });
         jPanel1.add(botonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 0, -1, 35));
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, 130));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, 130));
+
+        jLabel7.setToolTipText("");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 120, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -226,7 +233,6 @@ public class VentanaJuego extends javax.swing.JFrame {
         Categoria categoria = new Categoria();
         categoria.setArregloAnimales();
 
-        
         palabraOculta = categoria.getArreglo(i);
         this.palabraOculta = categoria.getArreglo(i);
         vocal = categoria.getVocal(palabraOculta);
@@ -243,6 +249,44 @@ public class VentanaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_textMostrarActionPerformed
 
     private void BotonMostrarPalabraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMostrarPalabraActionPerformed
+
+        Icon[] vectorImagenesAnimales = new ImageIcon[10];
+        Icon[] vectorImagenesColores = new ImageIcon[10];
+        Icon[] vectorImagenesFrutas = new ImageIcon[10];
+        vectorImagenesAnimales[0] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosAnimales/oso.jpg")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesAnimales[1] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosAnimales/tigre.png")).getImage().getScaledInstance(150, 130, 0));
+        vectorImagenesAnimales[2] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosAnimales/pez.jpg")).getImage().getScaledInstance(150, 130, 0));
+        vectorImagenesAnimales[3] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosAnimales/gato.jpg")).getImage().getScaledInstance(150, 130, 0));
+        vectorImagenesAnimales[4] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosAnimales/raton.jpg")).getImage().getScaledInstance(150, 130, 0));
+        vectorImagenesAnimales[5] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosAnimales/ballena.jpg")).getImage().getScaledInstance(150, 130, 0));
+        vectorImagenesAnimales[6] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosAnimales/caracol.jpg")).getImage().getScaledInstance(150, 130, 0));
+        vectorImagenesAnimales[7] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosAnimales/panda.jpg")).getImage().getScaledInstance(150, 130, 0));
+        vectorImagenesAnimales[8] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosAnimales/caballo.jpg")).getImage().getScaledInstance(150, 130, 0));
+        vectorImagenesAnimales[9] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosAnimales/oveja.jpg")).getImage().getScaledInstance(150, 130, 0));
+
+        vectorImagenesColores[0] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosColores/azul.png")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesColores[1] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosColores/verde.png")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesColores[2] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosColores/cafe.jpg")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesColores[3] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosColores/rojo.png")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesColores[4] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosColores/amarillo.png")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesColores[5] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosColores/morado.jpg")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesColores[6] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosColores/blanco.jpg")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesColores[7] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosColores/gris.png")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesColores[8] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosColores/naranja.png")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesColores[9] = new ImageIcon(new ImageIcon(getClass().getResource("/FotosColores/negro.jpg")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+
+        vectorImagenesFrutas[0]= new ImageIcon(new ImageIcon(getClass().getResource("/FotosFrutas/manzana.jpg")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesFrutas[1]= new ImageIcon(new ImageIcon(getClass().getResource("/FotosFrutas/fresa.jpg")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesFrutas[2]= new ImageIcon(new ImageIcon(getClass().getResource("/FotosFrutas/papaya.jpg")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesFrutas[3]= new ImageIcon(new ImageIcon(getClass().getResource("/FotosFrutas/mango.jpg")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesFrutas[4]= new ImageIcon(new ImageIcon(getClass().getResource("/FotosFrutas/sandia.jpg")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesFrutas[5]= new ImageIcon(new ImageIcon(getClass().getResource("/FotosFrutas/uvas.jpg")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesFrutas[6]= new ImageIcon(new ImageIcon(getClass().getResource("/FotosFrutas/pera.jpg")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesFrutas[7]= new ImageIcon(new ImageIcon(getClass().getResource("/FotosFrutas/kiwi.jpg")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesFrutas[8]= new ImageIcon(new ImageIcon(getClass().getResource("/FotosFrutas/mandarina.jpg")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        vectorImagenesFrutas[9]= new ImageIcon(new ImageIcon(getClass().getResource("/FotosFrutas/limon.jpg")).getImage().getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        
+                
         String StringTotalPalabras = Integer.toString(total_Palabras);
         totalPalabras.setText(StringTotalPalabras);
         String palabraOculta;
@@ -252,20 +296,24 @@ public class VentanaJuego extends javax.swing.JFrame {
         int contador = 0;
         //Jugador jugador = new Jugador();
         aux = Jugador.get_categoriaSeleccionada();
-        System.out.println("NUMERO = "+ aux);
-        
+        System.out.println("NUMERO = " + aux);
+
         Categoria categoria = new Categoria();
-        if( aux == 1 & contador == 0 ){
+        if (aux == 1 & contador == 0) {
             categoria.setArregloAnimales();
             contador++;
-        } else if( aux == 2 & contador == 0 ){
+            jLabel7.setIcon(vectorImagenesAnimales[i]);
+        } else if (aux == 2 & contador == 0) {
             categoria.setArregloColores();
             contador++;
-        } else if ( aux == 3 & contador == 0 ){
+            jLabel7.setIcon(vectorImagenesColores[i]);
+
+        } else if (aux == 3 & contador == 0) {
+            jLabel7.setIcon(vectorImagenesFrutas[i]);
             categoria.setArregloFrutas();
             contador++;
         }
-        
+
         palabraOculta = categoria.getArreglo(i);
         this.palabraOculta = categoria.getArreglo(i);
         vocal = categoria.getVocal(palabraOculta);
@@ -276,7 +324,7 @@ public class VentanaJuego extends javax.swing.JFrame {
 
         System.out.println("PRIMER ANIMAL : " + palabraOculta);
         System.out.println("PALABRA A MOSTRAR : " + palabraMostrar);
-        System.out.println("VOCAL = " + vocal); 
+        System.out.println("VOCAL = " + vocal);
 
 
     }//GEN-LAST:event_BotonMostrarPalabraActionPerformed
@@ -285,18 +333,17 @@ public class VentanaJuego extends javax.swing.JFrame {
         cantidadIntentos++;
         if ('a' == vocal) {
             textMostrar.setText(palabraOculta);
-            
+
             cantidadAciertos++;
-           
+
             /*String StringTotalPalabras = Integer.toString(total_Palabras);
             totalPalabras.setText(StringTotalPalabras);
             String StringTotalIntentos = Integer.toString(cantidadIntentos);
             totalIntentos.setText(StringTotalIntentos);
             String StringTotalFallos = Integer.toString(cantidadFallos);
             totalFallos.setText(StringTotalFallos);*/
-
         } else {
-            
+
             cantidadFallos++;
             /*String StringTotalPalabras = Integer.toString(total_Palabras);
             totalPalabras.setText(StringTotalPalabras);
@@ -311,19 +358,19 @@ public class VentanaJuego extends javax.swing.JFrame {
         totalIntentos.setText(StringTotalIntentos);
         String StringTotalFallos = Integer.toString(cantidadFallos);
         totalFallos.setText(StringTotalFallos);
-        
+
     }//GEN-LAST:event_BotonAActionPerformed
 
     private void totalPalabrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalPalabrasActionPerformed
-        
+
     }//GEN-LAST:event_totalPalabrasActionPerformed
 
     private void totalIntentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalIntentosActionPerformed
-        
+
     }//GEN-LAST:event_totalIntentosActionPerformed
 
     private void totalFallosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalFallosActionPerformed
-        
+
     }//GEN-LAST:event_totalFallosActionPerformed
 
     private void BotonEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEActionPerformed
@@ -341,7 +388,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         totalIntentos.setText(StringTotalIntentos);
         String StringTotalFallos = Integer.toString(cantidadFallos);
         totalFallos.setText(StringTotalFallos);
-        
+
     }//GEN-LAST:event_BotonEActionPerformed
 
     private void BotonIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIActionPerformed
@@ -349,7 +396,6 @@ public class VentanaJuego extends javax.swing.JFrame {
         if ('i' == vocal) {
             textMostrar.setText(palabraOculta);
             cantidadAciertos++;
-            
 
         } else {
             cantidadFallos++;
@@ -360,7 +406,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         totalIntentos.setText(StringTotalIntentos);
         String StringTotalFallos = Integer.toString(cantidadFallos);
         totalFallos.setText(StringTotalFallos);
-        
+
     }//GEN-LAST:event_BotonIActionPerformed
 
     private void BotonOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonOActionPerformed
@@ -377,7 +423,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         totalIntentos.setText(StringTotalIntentos);
         String StringTotalFallos = Integer.toString(cantidadFallos);
         totalFallos.setText(StringTotalFallos);
-        
+
     }//GEN-LAST:event_BotonOActionPerformed
 
     private void BotonUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonUActionPerformed
@@ -395,14 +441,14 @@ public class VentanaJuego extends javax.swing.JFrame {
         totalIntentos.setText(StringTotalIntentos);
         String StringTotalFallos = Integer.toString(cantidadFallos);
         totalFallos.setText(StringTotalFallos);
-        
+
     }//GEN-LAST:event_BotonUActionPerformed
 
     private void BotonSiguientePalabraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSiguientePalabraActionPerformed
         total_Palabras++;
-        if (this.i == 9){ // Condicional para que no se salga del limite de 10 elementos
+        if (this.i == 9) { // Condicional para que no se salga del limite de 10 elementos
             this.i = 0;
-        } else{
+        } else {
             i++;
         }
 
@@ -436,6 +482,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField textMostrar;
     private javax.swing.JTextField totalFallos;
